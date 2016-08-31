@@ -1,0 +1,15 @@
+.gallery-grid {
+  width: 980px;
+  margin: 0 auto;
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  .gallery-item {
+    margin: 40px;
+    img {
+      width: 192px;
+    }
+  }
+}
