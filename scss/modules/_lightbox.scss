@@ -1,3 +1,27 @@
 .lightbox {
-
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0,0,0,0.5);
+  @include display-flex();
+  @include flex-wrap(nowrap);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  .lightbox-inner {
+    height: auto;
+    width: auto;
+    .lightbox-media {
+      height: auto;
+      max-width: 600px;
+      background: $color-base-white;
+      @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
+    }
+  }
 }

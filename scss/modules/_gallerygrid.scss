@@ -4,12 +4,13 @@
   @include display-flex();
   @include flex-wrap(wrap);
   @include flex-direction(row);
-  @include justify-content(flex-start);
+  @include justify-content(space-between);
   @include align-items(flex-start);
   .gallery-item {
-    margin: 40px;
+    width: calc((200 / 980) * 100%);
+    margin-bottom: calc((60 / 980) * 100%);
     img {
-      width: 192px;
+      width: auto;
     }
   }
 }
