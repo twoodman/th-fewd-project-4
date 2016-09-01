@@ -20,6 +20,22 @@ Or:
 
 
 To Do:
+
+~~- define a clear naming convention (BEM)~~
+```
+- CSS:
+  - main wrapper: main
+  - header: main__header
+    - content: main__content
+    - gallery: gallery
+    - gallery item: gallery__item
+      - gallery image: item__image
+- JS (lightbox):
+  - gallery: js-lightbox-items
+    - gallery anchor: js-lightbox-anchor
+      - gallery image: js-lightbox-image
+```
+
 - rewrite openMedia() to be more modular
 - implement videos (iframe?)
 - implement arrows(go through gallery) and top right X(close) and Esc(close)
