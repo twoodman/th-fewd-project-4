@@ -21,7 +21,7 @@ Or:
 
 To Do:
 
-~~- define a clear naming convention (BEM)~~
+- ~~define a clear naming convention (BEM)~~ - done, see below
 ```
 - CSS:
   - main wrapper: main
