@@ -33,11 +33,15 @@ To Do:
       - gallery image: item__image
 - JS (lightbox):
   - gallery: woodbox
-    - gallery anchor: woodbox__anchor
-      - gallery image: woodbox__media
+    - gallery items: woodbox__item
+      - gallery anchors: woodbox__video-image/woodbox__anchor-video
 ```
 
-- rewrite to be more modular
-- implement videos (iframe?)
-- implement arrows(go through gallery) and top right X(close) and Esc(close)
+- ~~rewrite to be more modular~~ done
+- ~~implement videos (iframe?)~~ done
+- ~~implement arrows and top right X, look & functionality~~ done
 - implement using left/right keys to go through gallery
+- implement using Esc key to close overlay
+- implement search function
+- implement animation on search
+- clean up code
