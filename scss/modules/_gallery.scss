@@ -1,16 +1,16 @@
 .gallery {
   list-style: none;
-  width: 980px;
-  margin: 0 auto;
+  max-width: 980px;
+  margin: 90px auto 0 auto;
   @include display-flex();
   @include flex-wrap(wrap);
   @include flex-direction(row);
-  @include justify-content(space-between);
+  @include justify-content(center);
   @include align-items(flex-start);
   .gallery__item {
-    max-width: calc((200 / 980) * 100%);
-    margin-bottom: calc((60 / 980) * 100%);
-    min-height: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 30px;
     a {
       display: block;
       width: auto;
