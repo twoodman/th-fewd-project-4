@@ -2,47 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Interactive Photo Gallery</title>
+  <title>Interactive Photo/Media Gallery</title>
   <link rel="stylesheet" href="stylesheets/application.min.css">
 </head>
 <body>
-  <div class="main-container">
+  <div class="main">
 
-    <header class="main-header">
-      <input class="media-search" type="search" value="" placeholder="Search" autofocus>
+    <header class="main__header">
+      <input class="search" type="search" value="" placeholder="Search" autofocus>
     </header>
 
-    <div class="main-content">
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <a class="media-link" href="images/01.jpg">
-            <img class="media-item" src="/images/thumbnails/01.jpg" title="Hay Bales" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a class="media-link" href="images/02.jpg">
-            <img class="media-item" src="/images/thumbnails/02.jpg" title="Lake" alt="The lake was so calm today. We had a great view of the snow on the mountains from here.">
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a class="media-link" href="images/03.jpg">
-            <img class="media-item" src="/images/thumbnails/03.jpg" title="Canyon" alt="I hiked to the top of the mountain and got this picture of the canyon and trees below.">
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a class="media-link" href="images/04.jpg">
-            <img class="media-item" src="/images/thumbnails/04.jpg" title="Iceberg" alt="It was amazing to see an iceberg up close, it was so cold but didn’t snow today.">
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a class="media-link" href="images/04.jpg">
-            <img class="media-item" src="/images/thumbnails/force-awakens.jpg" title="Star Wars VII: The Force Awakens" alt="yeeeeeee">
-          </a>
-        </div>
-      </div>
-    </div>
+    <div class="main__content">
+      <ul class="gallery">
 
+        <li class="gallery__item">
+          <a class="woodbox__anchor" href="/images/01.jpg">
+            <img class="woodbox__media item__image"
+                src="/images/thumbnails/01.jpg"
+                title="Hay Bales"
+                alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
+          </a>
+        </li>
+
+        <li class="gallery__item">
+          <a class="woodbox__anchor" href="/images/02.jpg">
+            <img class="woodbox__media item__image"
+                src="/images/thumbnails/02.jpg"
+                title="Lake"
+                alt="The lake was so calm today. We had a great view of the snow on the mountains from here.">
+          </a>
+        </li>
+
+        <li class="gallery__item">
+          <a class="woodbox__anchor" href="/images/03.jpg">
+            <img class="woodbox__media item__image"
+                src="/images/thumbnails/03.jpg"
+                title="Canyon"
+                alt="I hiked to the top of the mountain and got this picture of the canyon and trees below.">
+          </a>
+        </li>
+
+        <li class="gallery__item">
+          <a class="woodbox__anchor" href="/images/04.jpg">
+            <img class="woodbox__media item__image"
+                src="/images/thumbnails/04.jpg"
+                title="Iceberg"
+                alt="It was amazing to see an iceberg up close, it was so cold but didn’t snow today.">
+          </a>
+        </li>
+
+<!--         <div class="gallery__item">
+          <a class="woodbox__anchor" href="https://www.youtube.com/watch?v=sGbxmsDFVnE">
+            <img class="woodbox__media item__image"
+                src="https://image.tmdb.org/t/p/w640/weUSwMdQIa3NaXVzwUoIIcAi85d.jpg"
+                title="Star Wars VII: The Force Awakens"
+                alt="yeeeeeee">
+          </a>
+        </div> -->
+      <!-- gallery close
+      ================= -->
+      </ul>
+    <!-- main__content close
+    ================= -->
+    </div>
+  <!-- main close
+  ================= -->
   </div>
-  <script src="javascripts/grid.js"></script>
+  <!-- scripts
+  ================= -->
+  <script src="javascripts/jquery-3.1.0.min.js"></script>
+  <script src="javascripts/app.js"></script>
 </body>
 </html>

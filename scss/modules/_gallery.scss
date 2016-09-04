@@ -1,4 +1,5 @@
-.gallery-grid {
+.gallery {
+  list-style: none;
   width: 980px;
   margin: 0 auto;
   @include display-flex();
@@ -6,11 +7,17 @@
   @include flex-direction(row);
   @include justify-content(space-between);
   @include align-items(flex-start);
-  .gallery-item {
-    width: calc((200 / 980) * 100%);
+  .gallery__item {
+    max-width: calc((200 / 980) * 100%);
     margin-bottom: calc((60 / 980) * 100%);
-    img {
+    min-height: 100%;
+    a {
+      display: block;
       width: auto;
+      min-height: 100%;
+    }
+    img {
+      width: 200px;
     }
   }
 }

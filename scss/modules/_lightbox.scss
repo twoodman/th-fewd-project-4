@@ -1,27 +1,50 @@
-.lightbox {
-  position: fixed;
+#woodbox__overlay {
+  position: absolute;
   z-index: 9999;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  min-height: 100%;
+  left: 0;
+  height: 100%;
   width: 100%;
-  opacity: 0;
-  background: rgba(0,0,0,0.5);
-  @include display-flex();
-  @include flex-wrap(nowrap);
-  @include flex-direction(column);
-  @include justify-content(center);
-  @include align-items(center);
-  .lightbox-inner {
-    height: auto;
-    width: auto;
-    .lightbox-media {
-      height: auto;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  margin: auto;
+  .woodbox__inner {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    @include translateY(-50%);
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    .woodbox__media-wrap {
       max-width: 600px;
-      background: $color-base-white;
-      @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
+      height: auto;
+      position: absolute;
+      margin-left: auto;
+      left: 50%;
+      top: 50%;
+      @include translate(-50%, -50%);
+      .woodbox__media-title {
+        padding-bottom: 10px;
+        text-align: left;
+        font-size: $base-font-size + 8;
+      }
+      .woodbox__media {
+        height: auto;
+        max-width: 600px;
+        background: $color-base-white;
+        margin: 0;
+        padding: 0;
+        @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
+      }
+      .woodbox__media-caption {
+        padding-top: 10px;
+        width: 98%;
+        text-align: center;
+        font-size: $base-font-size + 2;
+      }
     }
   }
 }
