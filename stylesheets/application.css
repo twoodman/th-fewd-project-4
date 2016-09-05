@@ -67,6 +67,10 @@ html, body {
   overflow-x: initial;
 }
 
+body {
+  padding: 0 30px 0 30px;
+}
+
 h1 {
   font-family: sans-serif;
   font-weight: bolder;
@@ -89,6 +93,8 @@ p {
   left: 0;
   width: 100%;
   height: 120px;
+  z-index: 9000;
+  padding: 30px;
   background: #ffffff;
   display: -webkit-flex;
   display: flex;
@@ -101,30 +107,32 @@ p {
   -webkit-align-items: center;
   align-items: center;
 }
-.main__header .search {
-  max-width: 460px;
-  height: 45px;
+.main__header #search-bar {
+  width: 460px;
+  height: 40px;
+  max-width: 85%;
   font-size: 16px;
   padding: 4px;
   margin: 0;
+  background: #ffffff;
   border: 1px solid #dddddd;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-.main__header .search:-moz-placeholder {
+.main__header #search-bar:-moz-placeholder {
   color: #dddddd;
   font-style: italic;
 }
-.main__header .search::-moz-placeholder {
+.main__header #search-bar::-moz-placeholder {
   color: #dddddd;
   font-style: italic;
 }
-.main__header .search:-ms-input-placeholder {
+.main__header #search-bar:-ms-input-placeholder {
   color: #dddddd;
   font-style: italic;
 }
-.main__header .search::-webkit-input-placeholder {
+.main__header #search-bar::-webkit-input-placeholder {
   color: #dddddd;
   font-style: italic;
 }
@@ -132,30 +140,46 @@ p {
 .gallery {
   list-style: none;
   max-width: 980px;
-  margin: 90px auto 0 auto;
+  margin: 120px auto 0 auto;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .gallery .gallery__item {
-  max-width: 200px;
-  height: auto;
-  margin: 30px;
+  opacity: 1;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  width: calc((200 / 980) * 100%);
+  margin-bottom: calc((60 / 980) * 100%);
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .gallery .gallery__item a {
   display: block;
   width: auto;
-  min-height: 100%;
+  max-height: 100%;
+  text-decoration: none;
+  outline: 0;
 }
 .gallery .gallery__item img {
-  width: 200px;
+  -moz-box-shadow: #b3b3b3 0 0 10px;
+  -webkit-box-shadow: #b3b3b3 0 0 10px;
+  box-shadow: #b3b3b3 0 0 10px;
+  max-width: 100%;
+}
+.gallery .nonresult {
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  opacity: 0;
 }
 
 #woodbox__overlay {
@@ -165,30 +189,25 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  height: 101vh;
+  background: rgba(0, 0, 0, 0.8);
   display: none;
   margin: auto;
   overflow: hidden;
 }
 #woodbox__overlay #woodbox__inner {
   position: relative;
-  margin: 0 auto;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  margin: 8vh auto 0 auto;
   width: 100%;
   height: 80%;
   text-align: center;
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap {
-  max-width: 250px;
-  min-height: 285px;
+  width: 60%;
+  max-width: 600px;
   position: absolute;
   margin-left: auto;
+  margin-top: 20px;
   left: 50%;
   top: 50%;
   -moz-transform: translate(-50%, -50%);
@@ -196,16 +215,27 @@ p {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+@media (min-width: 780px) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap {
+    width: 100%;
+  }
+}
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-title {
-  display: inline-block;
-  padding-bottom: 10px;
-  float: left;
-  font-size: 24px;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-title {
+    top: -40px;
+    font-size: 24px;
+  }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-image {
-  clear: both;
   height: auto;
-  max-width: 250px;
+  width: 100%;
   background: #ffffff;
   margin: 0;
   padding: 0;
@@ -214,10 +244,28 @@ p {
   box-shadow: #404040 0 0 15px;
   overflow: hidden;
 }
-#woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-video {
+#woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__iframe-wrap {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 28.125%;
+  height: 50vh;
+}
+@media (min-width: 780px) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__iframe-wrap {
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+}
+#woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__iframe-wrap .woodbox__media-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   clear: both;
-  height: auto;
-  max-width: 250px;
   background: #ffffff;
   margin: 0;
   padding: 0;
@@ -227,20 +275,30 @@ p {
   overflow: hidden;
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-caption {
-  padding-top: 10px;
+  display: block;
+  margin-top: 20px;
   width: 98%;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-caption {
+    font-size: 18px;
+  }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close {
-  display: inline-block;
-  float: right;
-  position: relative;
-  top: 0;
-  right: -20px;
+  position: absolute;
+  top: -30px;
+  right: 0;
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close {
+    top: -50px;
+    font-size: 40px;
+  }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close:hover {
   color: #dddddd;
@@ -248,30 +306,47 @@ p {
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close:active {
   color: #c4c4c4;
 }
-#woodbox__overlay #woodbox__inner #woodbox__media-previous,
-#woodbox__overlay #woodbox__inner #woodbox__media-next {
+#woodbox__overlay #woodbox__media-previous,
+#woodbox__overlay #woodbox__media-next {
   position: absolute;
   display: inline-block;
-  top: 45%;
-  -moz-transform: translateY(-45%);
-  -ms-transform: translateY(-45%);
-  -webkit-transform: translateY(-45%);
-  transform: translateY(-45%);
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
 }
-#woodbox__overlay #woodbox__inner #woodbox__media-previous:hover,
-#woodbox__overlay #woodbox__inner #woodbox__media-next:hover {
+@media (min-width: 780px) {
+  #woodbox__overlay #woodbox__media-previous,
+  #woodbox__overlay #woodbox__media-next {
+    font-size: 30px;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__media-previous,
+  #woodbox__overlay #woodbox__media-next {
+    font-size: 40px;
+  }
+}
+#woodbox__overlay #woodbox__media-previous:hover,
+#woodbox__overlay #woodbox__media-next:hover {
   color: #dddddd;
 }
-#woodbox__overlay #woodbox__inner #woodbox__media-previous:active,
-#woodbox__overlay #woodbox__inner #woodbox__media-next:active {
+#woodbox__overlay #woodbox__media-previous:active,
+#woodbox__overlay #woodbox__media-next:active {
   color: #c4c4c4;
 }
-#woodbox__overlay #woodbox__inner #woodbox__media-previous {
+#woodbox__overlay #woodbox__media-previous {
   left: 10px;
 }
-#woodbox__overlay #woodbox__inner #woodbox__media-next {
+#woodbox__overlay #woodbox__media-next {
   right: 10px;
 }

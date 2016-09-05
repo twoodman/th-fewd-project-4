@@ -1,9 +1,13 @@
 // colours
 $color-base-white : #ffffff; // used in header bg
 $color-base-black : #000000; // used in text
-$color-base-mute-gray : #dddddd; // colour used in search bar border/text and item shadows
+$color-base-mute-black : lighten($color-base-black, 70%); // colour used in item shadow
+$color-base-mute-gray : #dddddd; // colour used in search bar border
 
 // fonts
 $base-font-size : 16px;
 $base-icon-size : 20px;
-$icon-size-20 : $base-font-size + 20;
+
+// media breaks
+$break-780 : '(min-width: 780px)';
+$break-850 : '(min-width: 850px)';

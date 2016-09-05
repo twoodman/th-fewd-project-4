@@ -5,69 +5,96 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0,0,0,0.7);
+  height: 101vh;
+  background: rgba(0,0,0,0.8);
   display: none;
   margin: auto;
   overflow: hidden;
   #woodbox__inner {
     position: relative;
-    margin: 0 auto;
-    top: 50%;
-    @include translateY(-50%);
+    margin: 8vh auto 0 auto;
     width: 100%;
     height: 80%;
     text-align: center;
     .woodbox__media-wrap {
-      max-width: 250px;
-      min-height: 285px;
+      width: 60%;
+      max-width: 600px;
       position: absolute;
       margin-left: auto;
+      margin-top: 20px;
       left: 50%;
       top: 50%;
       @include translate(-50%, -50%);
+      @media #{$break-780} {
+        width: 100%;
+      }
       .woodbox__media-title {
-        display: inline-block;
-        padding-bottom: 10px;
-        float: left;
-        font-size: $base-font-size + 8;
+        position: absolute;
+        top: -20px;
+        left: 0px;
+        font-size: $base-font-size;
+        font-weight: bolder;
+        @media #{$break-850} {
+          top: -40px;
+          font-size: $base-font-size + 8;
+        }
       }
       .woodbox__media-image {
-        clear: both;
         height: auto;
-        max-width: 250px;
+        width: 100%;
         background: $color-base-white;
         margin: 0;
         padding: 0;
         @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
         overflow: hidden;
       }
-      .woodbox__media-video {
-        clear: both;
-        height: auto;
-        max-width: 250px;
-        background: $color-base-white;
-        margin: 0;
-        padding: 0;
-        @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
-        overflow: hidden;
+      .woodbox__iframe-wrap {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin: auto;
+        padding-top: 25px;
+        padding-bottom: 28.125%;
+        height: 50vh;
+        @media #{$break-780} {
+          height: 0;
+          padding-bottom: 56.25%;
+        }
+        .woodbox__media-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          clear: both;
+          background: $color-base-white;
+          margin: 0;
+          padding: 0;
+          @include box-shadow(lighten($color-base-black, 25%) 0 0 15px);
+          overflow: hidden;
+        }
       }
       .woodbox__media-caption {
-        padding-top: 10px;
+        display: block;
+        margin-top: 20px;
         width: 98%;
         text-align: center;
-        font-size: $base-font-size;
+        font-size: $base-font-size - 4;
+        @media #{$break-850} {
+          font-size: $base-font-size + 2;
+        }
       }
       #woodbox__media-close {
-        display: inline-block;
-        float: right;
-        position: relative;
-        top: 0;
-        right: -20px;
+        position: absolute;
+        top: -30px;
+        right: 0;
         font-size: $base-icon-size;
         color: $color-base-white;
         cursor: pointer;
+        @media #{$break-850} {
+          top: -50px;
+          font-size: $base-icon-size + 20;
+        }
         &:hover {
           color: $color-base-mute-gray;
         }
@@ -76,27 +103,35 @@
         }
       }
     }
-    #woodbox__media-previous,
-    #woodbox__media-next {
-      position: absolute;
-      display: inline-block;
-      top: 45%;
-      @include translateY(-45%);
-      font-size: $base-icon-size;
-      color: $color-base-white;
-      cursor: pointer;
-      &:hover {
-        color: $color-base-mute-gray;
-      }
-      &:active {
-        color: darken($color-base-mute-gray, 10%);
-      }
+  }
+  #woodbox__media-previous,
+  #woodbox__media-next {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    @include translateY(-50%);
+    font-size: $base-icon-size;
+    color: $color-base-white;
+    cursor: pointer;
+    @media #{$break-780} {
+      font-size: $base-icon-size + 10;
+      top: 50%;
+      @include translateY(-50%);
     }
-    #woodbox__media-previous {
-      left: 10px;
+    @media #{$break-850} {
+      font-size: $base-icon-size + 20;
     }
-    #woodbox__media-next {
-      right: 10px;
+    &:hover {
+      color: $color-base-mute-gray;
     }
+    &:active {
+      color: darken($color-base-mute-gray, 10%);
+    }
+  }
+  #woodbox__media-previous {
+    left: 10px;
+  }
+  #woodbox__media-next {
+    right: 10px;
   }
 }
