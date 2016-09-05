@@ -14,8 +14,6 @@ Or:
 - http://twoodman.github.io/th-fewd-project-4
 
 
-*very much WIP*
-
 
 *Un-minified files included in respective folders.*
 
@@ -44,8 +42,11 @@ To Do:
 - ~~implement using Esc key to close overlay~~ done
 - ~~implement search function~~ done
 - ~~implement animation on search~~ done
-- make site responsive
-- make grid cleaner
-- give items some styles to make page sleek
-- add rest of items to HTML list
+- ~~make site responsive~~ done
+- ~~make grid cleaner~~ done
+- ~~give items some styles to make page sleek~~ done
+- ~~add rest of items to HTML list~~ done
 - clean up code
+- ~~run html through w3c validator~~ done - first validation: no errors
+- ~~run css through w3c validator~~ done - first validation: no errors
+- ~~put js in jshint~~ done - first validation: 2 missing semicolons
