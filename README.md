@@ -47,4 +47,5 @@ To Do:
 - make site responsive
 - make grid cleaner
 - give items some styles to make page sleek
+- add rest of items to HTML list
 - clean up code
