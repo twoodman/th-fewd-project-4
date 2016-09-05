@@ -23,16 +23,16 @@ To Do:
 - ~~define a clear naming convention~~ - done
 ```
 - CSS:
-  - main wrapper: main
-  - header: main__header
-    - content: main__content
-    - gallery: gallery
-    - gallery item: gallery__item
-      - gallery image: item__image
+  - main wrapper: class | main-body
+    - header: class | main__header | header
+      - input: id | search-bar | input
+    - content: class | main__content | div
+    - gallery: class | gallery | ul
+    - gallery item: class | gallery__item | li
 - JS (lightbox):
-  - gallery: woodbox
-    - gallery items: woodbox__item
-      - gallery anchors: woodbox__video-image/woodbox__anchor-video
+  - gallery: id | woodbox | ul
+    - gallery items: class | woodbox__item | li
+      - gallery anchors: classes | woodbox__video-image/woodbox__anchor-video | a tags
 ```
 
 - ~~rewrite to be more modular~~ done
