@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     // gulp plumber so errors dont break pipe
     plumber = require('gulp-plumber'),
     // webserver & live reload
-    webserver = require('gulp-webserver');
+    webserver = require('gulp-webserver'),
+    // uglify for minifying js
+    uglify = require('gulp-uglify');
 
 // compile Sass, minify, & output to stylesheets folder
 gulp.task('sass', function() {
