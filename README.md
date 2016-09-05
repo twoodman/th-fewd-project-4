@@ -23,7 +23,7 @@ To Do:
 - ~~define a clear naming convention~~ - done
 ```
 - CSS:
-  - main wrapper: class | main-body
+  - main wrapper: class | main | body
     - header: class | main__header | header
       - input: id | search-bar | input
     - content: class | main__content | div
