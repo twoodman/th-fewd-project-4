@@ -40,8 +40,11 @@ To Do:
 - ~~rewrite to be more modular~~ done
 - ~~implement videos (iframe?)~~ done
 - ~~implement arrows and top right X, look & functionality~~ done
-- implement using left/right keys to go through gallery
-- implement using Esc key to close overlay
-- implement search function
-- implement animation on search
+- ~~implement using left/right keys to go through gallery~~ done
+- ~~implement using Esc key to close overlay~~ done
+- ~~implement search function~~ done
+- ~~implement animation on search~~ done
+- make site responsive
+- make grid cleaner
+- give items some styles to make page sleek
 - clean up code
