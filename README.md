@@ -46,7 +46,7 @@ To Do:
 - ~~make grid cleaner~~ done
 - ~~give items some styles to make page sleek~~ done
 - ~~add rest of items to HTML list~~ done
-- clean up code
+- ~~clean up code~~ done
 - ~~run html through w3c validator~~ done - first validation: no errors
 - ~~run css through w3c validator~~ done - first validation: no errors
 - ~~put js in jshint~~ done - first validation: 2 missing semicolons
