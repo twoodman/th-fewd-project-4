@@ -1,6 +1,12 @@
 (function() {
   'use strict';
   /*****************************
+  + keycode vars
+  *****************************/
+  var $escKey = 27;
+  var $leftKey = 37;
+  var $rightKey = 39;
+  /*****************************
   + create the three divs needed
   *****************************/
   // create overlay div element
@@ -69,8 +75,6 @@
   /*****************************
   + click gallery item event
   *****************************/
-  // check for visibility of overlay
-  var isVisible = $('.woodbox__overlay').is(':visible');
   // capture the click event on a list item with the class woodbox__item
   $('li.woodbox__item').click(function(event) {
     event.preventDefault();
@@ -103,26 +107,42 @@
       $woodboxMediaIframe.attr('src', $mediaLink);
       $woodboxMediaIframe.show();
     }
-
-    // if overlay is hidden
-    if (!isVisible) {
-      // fade in overlay
-      $woodboxOverlay.fadeIn('slow'); // make this fade in slow !!!!!!!!!!!!
-    }
+    // fade in overlay
+    $woodboxOverlay.fadeIn('slow');
   });
 
   /*****************************
   + arrow click functions
   *****************************/
-  // get previous gallery item
-  $woodboxMediaPrev.on('click', function() {
+  // prev item func
+  function previousItem() {
     moveItems(-1);
+  }
+  // next item func
+  function nextItem() {
+    moveItems(1);
+  }
+  // get previous gallery item
+  // click movement
+  $woodboxMediaPrev.on('click', function() {
+    previousItem();
   });
-  // if no previous gallery item remove arrow
-
+  // key movement
+  $(document).keydown(function(e) {
+    if (e.keyCode === $leftKey) {
+      previousItem();
+    }
+  });
   // get next gallery item
+  // click movement
   $woodboxMediaNext.on('click', function() {
     moveItems(1);
+  });
+  // key movement
+  $(document).keydown(function(e) {
+    if (e.keyCode === $rightKey) {
+      nextItem();
+    }
   });
 
   // moving between previous and next items
@@ -137,7 +157,7 @@
   }
 
   /*****************************
-  + click overlay (close) events
+  + overlay close events
   *****************************/
   // when overlay is clicked
   $woodboxOverlay.on('click', function(e) {
@@ -149,6 +169,48 @@
       // fade out overlay
       $(this).fadeOut('slow');
     }
+  });
+  $(document).keydown(function(e) {
+    if (e.keyCode === $escKey) {
+      $('li.active').removeClass('active');
+      $woodboxOverlay.fadeOut('slow');
+    }
+  });
+
+
+  /*****************************
+  + search functionality
+  *****************************/
+  // for each li inside #woodbox
+  $('#woodbox li').each(function() {
+    // get the child img's alt attr
+    var $altGet = $(this).find('img').attr('alt');
+    // and set it in li as a lowercase data-attr
+    $(this).attr('data-search', $altGet.toLowerCase());
+  });
+
+  // on keyup
+  $('#search-bar').on('keyup', function() {
+    // store search input in variable in lowercase
+    var query = $(this).val().toLowerCase();
+    $('#woodbox li').each(function() {
+      // store 'this' in var for settimeout
+      var $item = $(this);
+      // if the query matches any data-search string or the search(query var) value is empty
+      if ($(this).filter('[data-search *= ' + query + ']').length > 0 || query.length < 1) {
+        // show item and remove nonresult class
+        $item.show().removeClass('nonresult');
+      } else {
+        // else add nonresult class (scales to 0)
+        $(this).addClass('nonresult');
+        // and after 300ms (time of transition) -
+        // hide this(item = this, earlier in function)
+        setTimeout(function() {
+          // hide item
+          $item.hide();
+        }, 300);
+      }
+    });
   });
 
 // end function
