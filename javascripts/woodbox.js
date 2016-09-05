@@ -39,7 +39,7 @@
 
   // create media elements
   // iframe wrap
-  var $woodboxIframeWrap = $('<div class="woodbox__iframe-wrap"></div>')
+  var $woodboxIframeWrap = $('<div class="woodbox__iframe-wrap"></div>');
   // iframe element
   var $woodboxMediaIframe = $('<iframe scrolling="no" class="woodbox__media-video" seamless allowfullscreen>');
   // append it to iframe wrap
@@ -48,7 +48,7 @@
   $woodboxMediaWrap.append($woodboxIframeWrap);
 
   // img element
-  var $woodboxMediaImage = $('<img class="woodbox__media-image">')
+  var $woodboxMediaImage = $('<img class="woodbox__media-image">');
   // append it to media wrap
   $woodboxMediaWrap.append($woodboxMediaImage);
 
