@@ -22,7 +22,7 @@ Or:
 
 To Do:
 
-- ~~define a clear naming convention (BEM?)~~ - done
+- ~~define a clear naming convention~~ - done
 ```
 - CSS:
   - main wrapper: main
