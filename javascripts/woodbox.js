@@ -38,10 +38,14 @@
   $woodboxMediaWrap.append($woodboxMediaClose);
 
   // create media elements
+  // iframe wrap
+  var $woodboxIframeWrap = $('<div class="woodbox__iframe-wrap"></div>')
   // iframe element
-  var $woodboxMediaIframe = $('<iframe scrolling="no" class="woodbox__media-video" seamless allowfullscreen frameborder="0">');
-  // append it to media wrap
-  $woodboxMediaWrap.append($woodboxMediaIframe);
+  var $woodboxMediaIframe = $('<iframe scrolling="no" class="woodbox__media-video" seamless allowfullscreen>');
+  // append it to iframe wrap
+  $woodboxIframeWrap.append($woodboxMediaIframe);
+  // append iframe wrap to media wrap
+  $woodboxMediaWrap.append($woodboxIframeWrap);
 
   // img element
   var $woodboxMediaImage = $('<img class="woodbox__media-image">')
@@ -56,12 +60,12 @@
   /*****************************
   + append it all together
   *****************************/
-  // append arrows to overlay inner
+  // append arrows to master overlay
   // prev arrow
-  $woodboxOverlayInner.append($woodboxMediaPrev);
+  $woodboxOverlay.append($woodboxMediaPrev);
 
   // next arrow
-  $woodboxOverlayInner.append($woodboxMediaNext);
+  $woodboxOverlay.append($woodboxMediaNext);
 
   // append media wrap to overlay inner
   $woodboxOverlayInner.append($woodboxMediaWrap);
@@ -90,7 +94,6 @@
     $woodboxMediaCaption.text($mediaCaption);
     // get media type
     var $mediaType = $(this).find('a').attr('class');
-    console.log($mediaType);
     // clear active class from any li's
     $('li.active').removeClass('active');
     // add active class
@@ -99,11 +102,13 @@
     // checking for media type
     // hide the other type
     if ($mediaType === "woodbox__anchor-image") {
+      $woodboxIframeWrap.hide();
       $woodboxMediaIframe.hide();
       $woodboxMediaImage.attr('src', $mediaLink);
       $woodboxMediaImage.show();
     } else if ($mediaType === "woodbox__anchor-video") {
       $woodboxMediaImage.hide();
+      $woodboxIframeWrap.show();
       $woodboxMediaIframe.attr('src', $mediaLink);
       $woodboxMediaIframe.show();
     }
@@ -185,8 +190,9 @@
   $('#woodbox li').each(function() {
     // get the child img's alt attr
     var $altGet = $(this).find('img').attr('alt');
+    var $titleGet = $(this).find('img').attr('title');
     // and set it in li as a lowercase data-attr
-    $(this).attr('data-search', $altGet.toLowerCase());
+    $(this).attr('data-search', $altGet.toLowerCase() + ' - ' + $titleGet.toLowerCase());
   });
 
   // on keyup
