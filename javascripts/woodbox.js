@@ -62,10 +62,10 @@
   *****************************/
   // append arrows to master overlay
   // prev arrow
-  $woodboxOverlay.append($woodboxMediaPrev);
+  $woodboxOverlayInner.append($woodboxMediaPrev);
 
   // next arrow
-  $woodboxOverlay.append($woodboxMediaNext);
+  $woodboxOverlayInner.append($woodboxMediaNext);
 
   // append media wrap to overlay inner
   $woodboxOverlayInner.append($woodboxMediaWrap);
