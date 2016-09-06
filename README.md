@@ -50,3 +50,6 @@ To Do:
 - ~~run html through w3c validator~~ done - first validation: no errors
 - ~~run css through w3c validator~~ done - first validation: no errors
 - ~~put js in jshint~~ done - first validation: 2 missing semicolons
+
+
+- ~~add mobile and tablet media breaks and styles~~ done
