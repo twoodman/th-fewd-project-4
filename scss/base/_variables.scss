@@ -11,3 +11,7 @@ $base-icon-size : 20px;
 // media breaks
 $break-780 : '(min-width: 780px)';
 $break-850 : '(min-width: 850px)';
+$break-mobile : '(min-device-width: 320px) and (max-device-width: 750px) and (orientation: landscape)';
+$break-mobile-vert : '(min-device-width: 320px) and (max-device-width: 750px) and (orientation: portrait)';
+$break-mobile-tab : '(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape),
+(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)';

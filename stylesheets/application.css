@@ -197,14 +197,15 @@ p {
 }
 #woodbox__overlay #woodbox__inner {
   position: relative;
-  margin: 8vh auto 0 auto;
+  margin: 0 auto;
   width: 100%;
-  height: 80%;
+  max-width: 600px;
+  height: 100%;
   text-align: center;
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap {
-  width: 60%;
-  max-width: 600px;
+  height: auto;
+  width: 90%;
   position: absolute;
   margin-left: auto;
   margin-top: 20px;
@@ -215,9 +216,14 @@ p {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-@media (min-width: 780px) {
+@media (min-device-width: 320px) and (max-device-width: 750px) and (orientation: landscape) {
   #woodbox__overlay #woodbox__inner .woodbox__media-wrap {
-    width: 100%;
+    width: 60%;
+  }
+}
+@media (min-device-width: 320px) and (max-device-width: 750px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap {
+    width: 70%;
   }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-title {
@@ -231,6 +237,12 @@ p {
   #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-title {
     top: -40px;
     font-size: 24px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-title {
+    top: -50px;
+    font-size: 28px;
   }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-image {
@@ -250,13 +262,12 @@ p {
   position: relative;
   margin: auto;
   padding-top: 25px;
-  padding-bottom: 28.125%;
-  height: 50vh;
+  height: 0;
+  padding-bottom: 56.25%;
 }
-@media (min-width: 780px) {
+@media (min-device-width: 320px) and (max-device-width: 750px) and (orientation: landscape) {
   #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__iframe-wrap {
-    height: 0;
-    padding-bottom: 56.25%;
+    padding-bottom: 45%;
   }
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__iframe-wrap .woodbox__media-video {
@@ -286,6 +297,16 @@ p {
     font-size: 18px;
   }
 }
+@media (min-device-width: 320px) and (max-device-width: 750px) and (orientation: landscape) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-caption {
+    margin-top: 10px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap .woodbox__media-caption {
+    font-size: 22px;
+  }
+}
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close {
   position: absolute;
   top: -30px;
@@ -300,14 +321,20 @@ p {
     font-size: 40px;
   }
 }
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close {
+    top: -80px;
+    font-size: 60px;
+  }
+}
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close:hover {
   color: #dddddd;
 }
 #woodbox__overlay #woodbox__inner .woodbox__media-wrap #woodbox__media-close:active {
   color: #c4c4c4;
 }
-#woodbox__overlay #woodbox__media-previous,
-#woodbox__overlay #woodbox__media-next {
+#woodbox__overlay #woodbox__inner #woodbox__media-previous,
+#woodbox__overlay #woodbox__inner #woodbox__media-next {
   position: absolute;
   display: inline-block;
   top: 50%;
@@ -320,8 +347,8 @@ p {
   cursor: pointer;
 }
 @media (min-width: 780px) {
-  #woodbox__overlay #woodbox__media-previous,
-  #woodbox__overlay #woodbox__media-next {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous,
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
     font-size: 30px;
     top: 50%;
     -moz-transform: translateY(-50%);
@@ -331,22 +358,58 @@ p {
   }
 }
 @media (min-width: 850px) {
-  #woodbox__overlay #woodbox__media-previous,
-  #woodbox__overlay #woodbox__media-next {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous,
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
     font-size: 40px;
   }
 }
-#woodbox__overlay #woodbox__media-previous:hover,
-#woodbox__overlay #woodbox__media-next:hover {
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous,
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
+    font-size: 60px;
+  }
+}
+#woodbox__overlay #woodbox__inner #woodbox__media-previous:hover,
+#woodbox__overlay #woodbox__inner #woodbox__media-next:hover {
   color: #dddddd;
 }
-#woodbox__overlay #woodbox__media-previous:active,
-#woodbox__overlay #woodbox__media-next:active {
+#woodbox__overlay #woodbox__inner #woodbox__media-previous:active,
+#woodbox__overlay #woodbox__inner #woodbox__media-next:active {
   color: #c4c4c4;
 }
-#woodbox__overlay #woodbox__media-previous {
-  left: 10px;
+#woodbox__overlay #woodbox__inner #woodbox__media-previous {
+  left: 5px;
 }
-#woodbox__overlay #woodbox__media-next {
-  right: 10px;
+@media (min-width: 780px) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous {
+    left: -20px;
+  }
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous {
+    left: -40px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-previous {
+    left: -60px;
+  }
+}
+#woodbox__overlay #woodbox__inner #woodbox__media-next {
+  right: 5px;
+}
+@media (min-width: 780px) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
+    right: -20px;
+  }
+}
+@media (min-width: 850px) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
+    right: -40px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #woodbox__overlay #woodbox__inner #woodbox__media-next {
+    right: -60px;
+  }
 }
