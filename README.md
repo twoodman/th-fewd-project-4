@@ -1,6 +1,7 @@
 #### Project 4 for Treehouse FEWD Course
 ----
 
+
 A responsive and interactive media gallery.
 ~~Uses jQuery~~ - Rewrite in vanilla JavaScript
 
@@ -14,20 +15,20 @@ Or:
 - http://twoodman.github.io/th-fewd-project-4
 
 
-
 *Un-minified files included in respective folders.*
 
 
 ##### Rewrite:
 ----
 To Do:
-- Rewrite all jQuery to use vanilla JavaScript ES6
+- Use SMACSS/BEM conventions
+- Rewrite all jQuery to use vanilla JavaScript / ES6
+- Use [standardjs](http://standardjs.com/) convention
 
 
 ##### Original:
 ----
 To Do:
-
 - ~~define a clear naming convention~~ - done
 ```
 - CSS:
