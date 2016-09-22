@@ -2,7 +2,7 @@
 ----
 
 A responsive and interactive media gallery.
-Uses jQuery - will be rewriting later and making new repo for vanilla JS version
+~~Uses jQuery~~ - Rewritten in vanilla JavaScript
 
 
 To Run:
@@ -18,6 +18,14 @@ Or:
 *Un-minified files included in respective folders.*
 
 
+##### Rewrite:
+----
+To Do:
+- Rewrite all jQuery to use vanilla JavaScript ES6
+
+
+##### Original:
+----
 To Do:
 
 - ~~define a clear naming convention~~ - done
@@ -25,14 +33,14 @@ To Do:
 - CSS:
   - main wrapper: class | main | body
     - header: class | main__header | header
-      - input: id | search-bar | input
+      - input: class | search-bar | input
     - content: class | main__content | div
     - gallery: class | gallery | ul
     - gallery item: class | gallery__item | li
 - JS (lightbox):
-  - gallery: id | woodbox | ul
-    - gallery items: class | woodbox__item | li
-      - gallery anchors: classes | woodbox__video-image/woodbox__anchor-video | a tags
+  - gallery: class | main__gallery | ul
+    - gallery items: class | gallery__item | li
+      - gallery anchors: classes | gallery__anchor-image/gallery__anchor-video | a tags
 ```
 
 - ~~rewrite to be more modular~~ done
@@ -50,6 +58,5 @@ To Do:
 - ~~run html through w3c validator~~ done | first validation: no errors
 - ~~run css through w3c validator~~ done | first validation: no errors
 - ~~put js in jshint~~ done | first validation: 2 missing semicolons
-
 
 - ~~add mobile and tablet media breaks and styles~~ done
