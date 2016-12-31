@@ -3,7 +3,7 @@
 
 
 A responsive and interactive media gallery.
-~~Uses jQuery~~ - Rewrite in vanilla JavaScript
+Uses jQuery
 
 
 To Run:
