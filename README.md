@@ -29,13 +29,11 @@ Or:
 
 
 ##### Rewrite: - done
-To Do:
 - ~~Rewrite all jQuery to use vanilla JavaScript / ES6~~
 - ~~Use [standardjs](http://standardjs.com/) convention~~
 
 
 ##### Class Naming Convention:
-To Do:
 - ~~define a clear naming convention~~ - done
 ```
 - CSS:
