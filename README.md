@@ -11,7 +11,7 @@ A responsive and interactive media gallery.
 
 **Full changes made on June 3rd-5th 2017:**
 
-- Killed off jQuery and rewrote with vanilla JS (ES6)
+- Killed off jQuery and rewrote with vanilla JS (ES6) using standard convention
 - Changed naming of module classes from 'woodbox' to 'boxx'
 - Modified a few styles. Nothing drastic, things like changing opacity of overlay background to be slightly lighter, etc.
 - Removed gallery item animation on search
