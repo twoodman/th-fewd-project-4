@@ -29,11 +29,11 @@ Or:
 *Un-minified files included in respective folders.*
 
 
-##### Rewrite:
+##### Rewrite: (done)
 ----
 To Do:
-- Rewrite all jQuery to use vanilla JavaScript / ES6
-- Use [standardjs](http://standardjs.com/) convention
+- ~~Rewrite all jQuery to use vanilla JavaScript / ES6~~
+- ~~Use [standardjs](http://standardjs.com/) convention~~
 
 
 ##### Class Naming Convention:
