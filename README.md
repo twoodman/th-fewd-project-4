@@ -2,8 +2,19 @@
 ----
 
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
 A responsive and interactive media gallery.
-Uses jQuery
+**June 3rd 2017 - Rewrote project to use pure JavaScript instead of jQuery**
+
+
+**Full changes made on June 3rd 2017:**
+
+- Killed off jQuery and rewrote with vanilla JS (ES6)
+- Changed naming of module classes from 'woodbox' to 'boxx'
+- Modified a few styles. Nothing drastic, things like changing opacity of overlay background to be slightly lighter, etc.
+- Removed gallery item animation on search
 
 
 To Run:
@@ -21,12 +32,11 @@ Or:
 ##### Rewrite:
 ----
 To Do:
-- Use SMACSS/BEM conventions
 - Rewrite all jQuery to use vanilla JavaScript / ES6
 - Use [standardjs](http://standardjs.com/) convention
 
 
-##### Original:
+##### Class Naming Convention:
 ----
 To Do:
 - ~~define a clear naming convention~~ - done
@@ -38,11 +48,15 @@ To Do:
     - content: class | main__content | div
     - gallery: class | gallery | ul
     - gallery item: class | gallery__item | li
-- JS (lightbox):
+- JS ('boxx'):
   - gallery: class | main__gallery | ul
     - gallery items: class | gallery__item | li
       - gallery anchors: classes | gallery__anchor-image/gallery__anchor-video | a tags
 ```
+
+
+The original checklist, kept for future reference.
+
 
 - ~~rewrite to be more modular~~ done
 - ~~implement videos (iframe?)~~ done
@@ -59,5 +73,4 @@ To Do:
 - ~~run html through w3c validator~~ done | first validation: no errors
 - ~~run css through w3c validator~~ done | first validation: no errors
 - ~~put js in jshint~~ done | first validation: 2 missing semicolons
-
 - ~~add mobile and tablet media breaks and styles~~ done

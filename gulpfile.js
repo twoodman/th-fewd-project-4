@@ -20,10 +20,10 @@ gulp.task('sass', () => {
     css: 'stylesheets',
     sass: 'scss'
   }))
-  .pipe(cleanCSS())
-  .pipe(rename({
-    suffix: '.min'
-  }))
+  // .pipe(cleanCSS())
+  // .pipe(rename({
+  //   suffix: '.min'
+  // }))
   .pipe(gulp.dest('stylesheets/'))
 })
 
@@ -40,7 +40,7 @@ gulp.task('reload', () => {
 
 //  watch task
 gulp.task('watchthis', () => {
-  gulp.watch('scss/**/*.scss', ['sass'])
+  gulp.watch('scss/**/*.scss', ['sass', 'reload'])
 })
 
 // default task
