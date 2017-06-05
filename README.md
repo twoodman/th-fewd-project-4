@@ -9,7 +9,7 @@ A responsive and interactive media gallery.
 **June 3rd 2017 - Rewrote project to use pure JavaScript instead of jQuery**
 
 
-**Full changes made on June 3rd 2017:**
+**Full changes made on June 3rd-5th 2017:**
 
 - Killed off jQuery and rewrote with vanilla JS (ES6)
 - Changed naming of module classes from 'woodbox' to 'boxx'
