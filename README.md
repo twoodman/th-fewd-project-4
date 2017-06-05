@@ -1,5 +1,4 @@
-#### Project 4 for Treehouse FEWD Course
-----
+## Project 4 for Treehouse FEWD Course
 
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -30,14 +29,12 @@ Or:
 
 
 ##### Rewrite: - done
-----
 To Do:
 - ~~Rewrite all jQuery to use vanilla JavaScript / ES6~~
 - ~~Use [standardjs](http://standardjs.com/) convention~~
 
 
 ##### Class Naming Convention:
-----
 To Do:
 - ~~define a clear naming convention~~ - done
 ```
