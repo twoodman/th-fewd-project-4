@@ -29,7 +29,7 @@ Or:
 *Un-minified files included in respective folders.*
 
 
-##### Rewrite: (done)
+##### Rewrite: ((done))
 ----
 To Do:
 - ~~Rewrite all jQuery to use vanilla JavaScript / ES6~~
